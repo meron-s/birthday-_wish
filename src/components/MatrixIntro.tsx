@@ -30,8 +30,10 @@ export default function MatrixIntro({ onComplete }: MatrixIntroProps) {
   const [zooming, setZooming] = useState(false);
 
   const initMatrix = useCallback((width: number, height: number) => {
-    const colWidth = 14;
-    const cols = Math.floor(width / colWidth);
+    const colWidth = 16;
+    const isMobile = width < 768;
+    const maxCols = isMobile ? 28 : 48;
+    const cols = Math.min(Math.floor(width / colWidth), maxCols);
     columnsRef.current = Array.from({ length: cols }, (_, i) => ({
       x: i * colWidth,
       y: Math.random() * height,
