@@ -19,33 +19,30 @@ export const birthday = {
 
   finalMessage: "Here's to you — today and always. 🤍",
 
-  /** Gallery photos — WebP for fast loading (run `npm run optimize:photos` after changing PNGs) */
+  /** Gallery photos (shown in the photo section) */
   photos: [
-    "/photos/photo1.webp",
-    "/photos/photo2.webp",
-    "/photos/photo3.webp",
-    "/photos/photo4.webp",
-  ],
-
-  /** Photos used to build the interactive heart collage */
-  heartPhotos: [
-    "/photos/photo1.webp",
-    "/photos/photo2.webp",
-    "/photos/photo3.webp",
-    "/photos/photo4.webp",
+    "/photos/photo1.png",
+    "/photos/photo2.png",
+    "/photos/photo3.png",
+    "/photos/photo4.png",
   ],
 
   /**
-   * Optional MP3 — place your song at public/music/birthday.mp3
-   * Leave empty to use the built-in soft ambient background.
+   * Photos used to build the interactive heart collage.
+   * Cycles through your photos to fill all heart slots.
+   */
+  heartPhotos: [
+    "/photos/photo1.png",
+    "/photos/photo2.png",
+    "/photos/photo3.png",
+    "/photos/photo4.png",
+  ],
+
+  /**
+   * Optional background music — drop your song at this path.
+   * Leave empty string to hide the music button.
    */
   musicSrc: "",
-
-  /** Built-in ambient pad (used when musicSrc is empty) */
-  useAmbientMusic: true,
-
-  /** Volume 0–1 */
-  musicVolume: 0.45,
 } as const;
 
 export type BirthdayConfig = typeof birthday;
